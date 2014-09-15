@@ -36,7 +36,7 @@ module Guard
     # Compile each template at the passed in paths.
     def run_on_modifications(paths = [])
       paths
-        .select { |path| @options[:extnames].includes? path.scan(/\.(.+)/).flatten[0] }
+        .select { |path| @options[:extnames].include? path.scan(/\.(.+)/).flatten[0] }
         .map { |path| Pathname path }
         .uniq.each do |path|
           relative_path = path.relative_path_from @input
