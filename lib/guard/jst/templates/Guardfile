@@ -1,0 +1,3 @@
+guard 'jst', input: 'app/javascripts', output: 'public/js', all_on_start: false, extnames: %[ejs jst] do
+  watch(%r{^app/javascripts/templates/.+$})
+end
